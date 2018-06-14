@@ -10,6 +10,7 @@
   <modules>
     <module>dubboserver</module>
     <module>dubbo-client</module>
+    <module>dubbo-server-api</module>
   </modules>
   <packaging>pom</packaging>
 

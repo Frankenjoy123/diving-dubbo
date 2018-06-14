@@ -7,3 +7,6 @@
 *.iml
 out
 gen
+/dubboserver/target/
+/dubbo-client/target/
+/dubbo-server-api/target/
