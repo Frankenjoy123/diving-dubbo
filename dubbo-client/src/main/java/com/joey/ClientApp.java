@@ -9,21 +9,23 @@ import java.io.IOException;
  * Hello world!
  *
  */
-public class App 
+public class ClientApp
 {
     public static void main( String[] args ) throws IOException {
 
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("classpath:*.xml");
+                new ClassPathXmlApplicationContext("dubbo-client.xml");
 
         context.start();
 
 
-        IhelloService ihelloService = (IhelloService) context.getBean("helloService");
+        for (int i=0;i<10;i++){
+            IhelloService ihelloService = (IhelloService) context.getBean("helloService");
 
-        String result = ihelloService.sayHello("joey");
+            String result = ihelloService.sayHello("joey");
 
-        System.out.println(result);
+            System.out.println(result);
+        }
 
         System.in.read();
 

@@ -6,14 +6,16 @@
 
     <dubbo:application name="dubbo-server" owner="joey"/>
 
-    <dubbo:protocol name="dubbo" port="20881"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
 
     <!--无注册中心方式-->
-    <dubbo:registry address="N/A"/>
+    <!--<dubbo:registry address="N/A"/>-->
+
+    <!--使用zk作为注册中心-->
+    <dubbo:registry id="zkReg" address="zookeeper://127.0.0.1:2181"/>
 
 
-    <dubbo:service interface="com.joey.hello.IhelloService" ref="helloService"
-      />
+    <dubbo:service interface="com.joey.hello.IhelloService" ref="helloService"     />
 
-    <bean id="helloService" class="com.joey.dubbo.HelloServiceImpl"/>
+    <bean id="helloService" class="com.joey.dubbo.HelloServiceImpl2"/>
 </beans>

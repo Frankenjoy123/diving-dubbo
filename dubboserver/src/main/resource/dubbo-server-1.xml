@@ -4,14 +4,19 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://code.alibabatech.com/schema/dubbo  http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="dubbo-client" owner="joey"/>
+    <dubbo:application name="dubbo-server" owner="joey"/>
 
+    <!--//配置provider集群起在不同端口-->
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:registry address="N/A"/>
+    <!--无注册中心方式-->
+    <!--<dubbo:registry address="N/A"/>-->
 
-    <!--直连方式-->
-    <dubbo:reference interface="com.joey.hello.IhelloService" id="helloService"
-                     url="dubbo://127.0.0.1:20881"/>
+    <!--使用zk作为注册中心-->
+    <dubbo:registry id="zkReg" address="zookeeper://127.0.0.1:2181"/>
 
+
+    <dubbo:service interface="com.joey.hello.IhelloService" ref="helloService"     />
+
+    <bean id="helloService" class="com.joey.dubbo.HelloServiceImpl"/>
 </beans>

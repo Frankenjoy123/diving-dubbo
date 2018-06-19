@@ -7,12 +7,12 @@ import java.io.IOException;
 /**
  * Created by xiaowu.zhou@tongdun.cn on 2018/6/14.
  */
-public class MainStart {
+public class MainStartCluster1 {
 
     public static void main(String[] args) throws IOException {
 
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("classpath:*.xml");
+                new ClassPathXmlApplicationContext("dubbo-server-1.xml");
 
         context.start();
 
