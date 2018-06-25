@@ -11,6 +11,8 @@
     <module>dubboserver</module>
     <module>dubbo-client</module>
     <module>dubbo-server-api</module>
+      <module>database-driver</module>
+    <module>mysql-driver</module>
   </modules>
   <packaging>pom</packaging>
 

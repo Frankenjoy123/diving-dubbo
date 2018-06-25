@@ -10,3 +10,5 @@ gen
 /dubboserver/target/
 /dubbo-client/target/
 /dubbo-server-api/target/
+/mysql-driver/target/
+/database-driver/target/
