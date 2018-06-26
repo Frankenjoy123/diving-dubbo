@@ -16,10 +16,8 @@ public class ExtensionLoadTest {
         ExtensionLoader<ExtensionFactory> loader =
                 ExtensionLoader.getExtensionLoader(ExtensionFactory.class);
 
+        //返回AdaptiveExtensionFactory
         ExtensionFactory extensionFactory = loader.getAdaptiveExtension();
-
-
-//        extensionFactory.getExtension()
 
         System.out.println(extensionFactory);
     }
@@ -30,10 +28,21 @@ public class ExtensionLoadTest {
         ExtensionLoader<Protocol> loader =
                 ExtensionLoader.getExtensionLoader(Protocol.class);
 
-        System.out.println(loader.getAdaptiveExtension());
+        //返回Protocol$Adaptive的实例
+        Protocol protocol = loader.getAdaptiveExtension();
 
-//        System.out.println(protocol.getDefaultPort());
+        System.out.println(protocol);
 
+    }
+
+    public void testWrapperDubboProtocol(){
+        ExtensionLoader<Protocol> loader =
+                ExtensionLoader.getExtensionLoader(Protocol.class);
+
+        //返回listnerWrapper(filterWapper(dubboProtocol))的包装
+        Protocol protocol = loader.getExtension("dubbo");
+
+        System.out.println(protocol);
     }
 
 
