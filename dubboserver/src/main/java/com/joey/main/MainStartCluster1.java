@@ -12,7 +12,7 @@ public class MainStartCluster1 {
     public static void main(String[] args) throws IOException {
 
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("dubbo-server-1.xml");
+                new ClassPathXmlApplicationContext("classpath:/dubbo-server-1.xml");
 
         context.start();
 

@@ -2,6 +2,7 @@ package com.joey;
 
 import static org.junit.Assert.assertTrue;
 
+import com.joey.hello.IhelloService;
 import org.junit.Test;
 
 /**
@@ -17,4 +18,15 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    @Test
+    public void test() throws NoSuchMethodException {
+        Class clazz = AppTest.class;
+        System.out.println(clazz.getConstructor());
+
+
+        Class clazz2 = DefaultHelloService.class;
+        System.out.println(clazz2.getConstructor(IhelloService.class));
+    }
+
 }

@@ -35,6 +35,7 @@ public class ExtensionLoadTest {
 
     }
 
+    @Test
     public void testWrapperDubboProtocol(){
         ExtensionLoader<Protocol> loader =
                 ExtensionLoader.getExtensionLoader(Protocol.class);
