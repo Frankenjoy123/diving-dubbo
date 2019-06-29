@@ -12,3 +12,5 @@ gen
 /dubbo-server-api/target/
 /mysql-driver/target/
 /database-driver/target/
+/zk-rpc/target/
+/zk-rmi/target/

@@ -11,8 +11,10 @@
     <module>dubboserver</module>
     <module>dubbo-client</module>
     <module>dubbo-server-api</module>
-      <module>database-driver</module>
+    <module>database-driver</module>
     <module>mysql-driver</module>
+    <module>zk-rmi</module>
+    <module>zk-rpc</module>
   </modules>
   <packaging>pom</packaging>
 
